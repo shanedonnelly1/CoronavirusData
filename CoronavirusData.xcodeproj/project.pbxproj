@@ -11,6 +11,13 @@
 		346012D62521099800B18F2F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346012D52521099800B18F2F /* ContentView.swift */; };
 		346012D82521099A00B18F2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346012D72521099A00B18F2F /* Assets.xcassets */; };
 		346012DB2521099A00B18F2F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346012DA2521099A00B18F2F /* Preview Assets.xcassets */; };
+		346012EC25210A1100B18F2F /* CoronavirusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346012E425210A1100B18F2F /* CoronavirusData.swift */; };
+		346012F025210A1100B18F2F /* Datum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346012E825210A1100B18F2F /* Datum.swift */; };
+		346012F225210A1100B18F2F /* owid-covid-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 346012EB25210A1100B18F2F /* owid-covid-data.json */; };
+		3461AD08252124F500AA8213 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461AD07252124F500AA8213 /* Bundle-Decodable.swift */; };
+		3461AD0C25212AFE00AA8213 /* CoronavirusCountryDataValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */; };
+		3461AD19252132B700AA8213 /* owid-covid-data.full.json in Resources */ = {isa = PBXBuildFile; fileRef = 3461AD17252132B700AA8213 /* owid-covid-data.full.json */; };
+		3461AD1A252132B700AA8213 /* source.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3461AD18252132B700AA8213 /* source.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,13 @@
 		346012D72521099A00B18F2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		346012DA2521099A00B18F2F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		346012DC2521099A00B18F2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		346012E425210A1100B18F2F /* CoronavirusData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoronavirusData.swift; sourceTree = "<group>"; };
+		346012E825210A1100B18F2F /* Datum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datum.swift; sourceTree = "<group>"; };
+		346012EB25210A1100B18F2F /* owid-covid-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "owid-covid-data.json"; sourceTree = "<group>"; };
+		3461AD07252124F500AA8213 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusCountryDataValue.swift; sourceTree = "<group>"; };
+		3461AD17252132B700AA8213 /* owid-covid-data.full.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "owid-covid-data.full.json"; sourceTree = "<group>"; };
+		3461AD18252132B700AA8213 /* source.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = source.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +66,8 @@
 		346012D22521099800B18F2F /* CoronavirusData */ = {
 			isa = PBXGroup;
 			children = (
+				346012E925210A1100B18F2F /* Data */,
+				346012E325210A1100B18F2F /* Models */,
 				346012D32521099800B18F2F /* CoronavirusDataApp.swift */,
 				346012D52521099800B18F2F /* ContentView.swift */,
 				346012D72521099A00B18F2F /* Assets.xcassets */,
@@ -67,6 +83,27 @@
 				346012DA2521099A00B18F2F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		346012E325210A1100B18F2F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				346012E425210A1100B18F2F /* CoronavirusData.swift */,
+				346012E825210A1100B18F2F /* Datum.swift */,
+				3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		346012E925210A1100B18F2F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				346012EB25210A1100B18F2F /* owid-covid-data.json */,
+				3461AD07252124F500AA8213 /* Bundle-Decodable.swift */,
+				3461AD17252132B700AA8213 /* owid-covid-data.full.json */,
+				3461AD18252132B700AA8213 /* source.txt */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +163,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3461AD1A252132B700AA8213 /* source.txt in Resources */,
+				346012F225210A1100B18F2F /* owid-covid-data.json in Resources */,
 				346012DB2521099A00B18F2F /* Preview Assets.xcassets in Resources */,
+				3461AD19252132B700AA8213 /* owid-covid-data.full.json in Resources */,
 				346012D82521099A00B18F2F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				346012D62521099800B18F2F /* ContentView.swift in Sources */,
+				3461AD0C25212AFE00AA8213 /* CoronavirusCountryDataValue.swift in Sources */,
 				346012D42521099800B18F2F /* CoronavirusDataApp.swift in Sources */,
+				3461AD08252124F500AA8213 /* Bundle-Decodable.swift in Sources */,
+				346012EC25210A1100B18F2F /* CoronavirusData.swift in Sources */,
+				346012F025210A1100B18F2F /* Datum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
