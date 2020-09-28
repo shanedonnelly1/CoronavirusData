@@ -4,7 +4,7 @@
 Be able to browse current coronavirus data and see chart widget for a given country
 
 ## Features:
-- [ ] App has a cached version of the data that it uses to display charts
+- [x] App has a cached version of the data that it uses to display charts
 - [ ] App can get update cache with latest version of data from https://covid.ourworldindata.org/data/owid-covid-data.json when user explicitly requests it
 - [ ] App can display a list of countries including some summary data
 - [ ] App can display a Detail View of information for a single country including charts
