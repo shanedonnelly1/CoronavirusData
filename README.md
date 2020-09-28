@@ -15,9 +15,13 @@ Be able to browse current coronavirus data and see chart widget for a given coun
     - [ ] Large is text and graph
 - [ ] Configuration of widget is done by allowing user to select country they are interested in
 
+## Todos:
+- [ ] Display date in a better format (e.g. .short)
+- [ ] Display the List of countries alphabetically
+
 ## Reference:
-WWDC Widget code-along: https://developer.apple.com/news/?id=yv6so7ie
-SwiftUI Tutorial for iOS: Creating Charts (raywenderlich.com): https://www.raywenderlich.com/6398124-swiftui-tutorial-for-ios-creating-charts
+* WWDC Widget code-along: https://developer.apple.com/news/?id=yv6so7ie
+* SwiftUI Tutorial for iOS: Creating Charts (raywenderlich.com): https://www.raywenderlich.com/6398124-swiftui-tutorial-for-ios-creating-charts
 
 
 ## Sourcecode:
