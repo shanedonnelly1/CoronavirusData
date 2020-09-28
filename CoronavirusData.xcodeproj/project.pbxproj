@@ -17,7 +17,6 @@
 		3461AD08252124F500AA8213 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461AD07252124F500AA8213 /* Bundle-Decodable.swift */; };
 		3461AD0C25212AFE00AA8213 /* CoronavirusCountryDataValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */; };
 		3461AD19252132B700AA8213 /* owid-covid-data.full.json in Resources */ = {isa = PBXBuildFile; fileRef = 3461AD17252132B700AA8213 /* owid-covid-data.full.json */; };
-		3461AD1A252132B700AA8213 /* source.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3461AD18252132B700AA8213 /* source.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		3461AD07252124F500AA8213 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusCountryDataValue.swift; sourceTree = "<group>"; };
 		3461AD17252132B700AA8213 /* owid-covid-data.full.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "owid-covid-data.full.json"; sourceTree = "<group>"; };
-		3461AD18252132B700AA8213 /* source.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = source.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +99,6 @@
 				346012EB25210A1100B18F2F /* owid-covid-data.json */,
 				3461AD07252124F500AA8213 /* Bundle-Decodable.swift */,
 				3461AD17252132B700AA8213 /* owid-covid-data.full.json */,
-				3461AD18252132B700AA8213 /* source.txt */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -163,7 +160,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3461AD1A252132B700AA8213 /* source.txt in Resources */,
 				346012F225210A1100B18F2F /* owid-covid-data.json in Resources */,
 				346012DB2521099A00B18F2F /* Preview Assets.xcassets in Resources */,
 				3461AD19252132B700AA8213 /* owid-covid-data.full.json in Resources */,
