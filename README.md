@@ -24,7 +24,7 @@ SwiftUI Tutorial for iOS: Creating Charts (raywenderlich.com): https://www.raywe
 https://github.com/shanedonnelly1/CoronavirusData
 
 ## Screenshot:
-![List View](⁨CoronavirusData⁩/⁨CoronavirusData⁩/⁨Data/list-view.jpg)
+![List View](https://github.com/shanedonnelly1/CoronavirusData/blob/master/CoronavirusData/Data/list-view.jpg?raw=true)
 
 ## Licence:
 This project uses data from https://covid.ourworldindata.org whic is CC BY License.  Update this readme to detail what that means for this app.
