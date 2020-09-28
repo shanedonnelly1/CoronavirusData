@@ -8,67 +8,49 @@
 
 import SwiftUI
 
-struct DayInfo {
-    let value: Double
-    let date: Date
-    
-    var dateString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        return dateFormatter.string(from: date)
-    }
-}
-
 struct BarChartView: View {
-    var measurements: [DayInfo]
+    let measurements: [DayInfo] = Bundle.main.decode("day-info.json")
     var maxValue = 0.0
     var minValue = 0.0
     
     var body: some View {
-        HStack {
-            ForEach(measurements, id: \.date) { measurement in
-                VStack {
-                    Spacer()
-                    Rectangle()
-                        .fill(Color.blue)
-                        .frame(width: getWidthFor(), height: getHeightFor(measurement.value))
+        GeometryReader { reader in
+            HStack {
+                ForEach(measurements, id: \.date) { measurement in
+                    VStack {
+                        Spacer()
+                        Text("\(measurement.value, specifier: "%.1f")")
+                            .font(.footnote)
+                            .rotationEffect(.degrees(-90), anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .fixedSize()
+                        Rectangle()
+                            .fill(Color.blue)
+                            .frame(
+                                width: getWidthForValue(in: reader.size.width, for: measurements.count),
+                                height: getHeightFor(value: measurement.value, in: reader.size.height)
+                            )
+                    }
                 }
             }
         }
     }
     
     init() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        // Better to load these from a JSON file or something
-        measurements = [DayInfo]()
-        measurements.append(DayInfo(value: 0, date: dateFormatter.date(from: "2020-09-01")!))
-        measurements.append(DayInfo(value: 1, date: dateFormatter.date(from: "2020-09-02")!))
-        measurements.append(DayInfo(value: 2, date: dateFormatter.date(from: "2020-09-03")!))
-        measurements.append(DayInfo(value: 4, date: dateFormatter.date(from: "2020-09-04")!))
-        measurements.append(DayInfo(value: 8, date: dateFormatter.date(from: "2020-09-05")!))
-        measurements.append(DayInfo(value: 16, date: dateFormatter.date(from: "2020-09-06")!))
-        measurements.append(DayInfo(value: 32, date: dateFormatter.date(from: "2020-09-07")!))
-        measurements.append(DayInfo(value: 64, date: dateFormatter.date(from: "2020-09-08")!))
-        
         // Is this the best place to calculate this?  It will work on
         // current data to hand and not have to worry about pre-processing the information
-        setMaxAndMinFrom(measurements: measurements)
+        setMaxAndMinValuesFrom(measurements: measurements)
     }
     
-    func getHeightFor(_ value: Double) -> CGFloat {
-        // @todo this should be a function of the height available (use GeometryReader?)
-        let height = CGFloat(800 * (value / maxValue))
+    func getHeightFor(value: Double, in viewHeight: CGFloat) -> CGFloat {
+        let height = CGFloat(viewHeight * CGFloat(value / maxValue))
         return height
     }
     
-    func getWidthFor() -> CGFloat {
-        // @todo this should be a function of the width available (use GeometryReader?)
-        return 20.0
+    func getWidthForValue(in viewWidth: CGFloat, for valueCount: Int) -> CGFloat {
+        return viewWidth / CGFloat(valueCount)
     }
     
-    mutating func setMaxAndMinFrom(measurements: [DayInfo]) {
+    mutating func setMaxAndMinValuesFrom(measurements: [DayInfo]) {
         for measurement in measurements {
             if measurement.value > maxValue {
                 maxValue = measurement.value
@@ -80,7 +62,7 @@ struct BarChartView: View {
     }
 }
 
-struct BarChart_Previews: PreviewProvider {
+struct BarChartView_Previews: PreviewProvider {
     static var previews: some View {
         BarChartView()
     }
