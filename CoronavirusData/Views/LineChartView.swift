@@ -17,26 +17,26 @@ struct LineChartView: View {
         GeometryReader { reader in
             ForEach(self.measurements, id: \.date) { measurement in
                 Path { p in
-                    let dWidth = self.dayWidth(reader.size.width, count: 8)
-                    let dHeight = self.degreeHeight(reader.size.height, range: 64)
-                    let dOffset = self.dayOffset(measurement.date, dWidth: dWidth)
+                    let dayWidth = self.dayWidth(reader.size.width, count: self.measurements.count)
+                    let measurementHeight = self.measurementHeight(reader.size.height, range: Int(self.maxValue))
+                    let dayOffset = self.dayOffset(measurement.date, dWidth: dayWidth)
 //                    let lowOffset = tempOffset(measurement.value, degreeHeight: dHeight)
                     let lowOffset = CGFloat(0)
-                    let highOffset = self.tempOffset(measurement.value, degreeHeight: dHeight)
-                    p.move(to: CGPoint(x: dOffset, y: reader.size.height - lowOffset))
-                    p.addLine(to: CGPoint(x: dOffset, y: reader.size.height - highOffset))
+                    let highOffset = self.measurementHeightOffset(measurement.value, measurementHeight: measurementHeight)
+                    p.move(to: CGPoint(x: dayOffset, y: reader.size.height - lowOffset))
+                    p.addLine(to: CGPoint(x: dayOffset, y: reader.size.height - highOffset))
                 }.stroke()
             }
         }
     }
     
-//    init() {
-//        // Is this the best place to calculate this?  It will work on
-//        // current data to hand and not have to worry about pre-processing the information
-//        setMaxAndMinValuesFrom(measurements: measurements)
-//    }
+    init() {
+        // Is this the best place to calculate this?  It will work on
+        // current data to hand and not have to worry about pre-processing the information
+        setMaxAndMinValuesFrom(measurements: measurements)
+    }
     
-    func degreeHeight(_ height: CGFloat, range: Int) -> CGFloat {
+    func measurementHeight(_ height: CGFloat, range: Int) -> CGFloat {
         return height / CGFloat(range)
     }
     
@@ -48,8 +48,19 @@ struct LineChartView: View {
         return CGFloat(Calendar.current.ordinality(of: .day, in: .year, for: date)!) * dWidth
     }
     
-    func tempOffset(_ temperature: Double, degreeHeight: CGFloat) -> CGFloat {
-        return CGFloat(temperature + 10) * degreeHeight
+    func measurementHeightOffset(_ temperature: Double, measurementHeight: CGFloat) -> CGFloat {
+        return CGFloat(temperature + 10) * measurementHeight
+    }
+    
+    mutating func setMaxAndMinValuesFrom(measurements: [DayInfo]) {
+        for measurement in measurements {
+            if measurement.value > maxValue {
+                maxValue = measurement.value
+            }
+            if measurement.value < minValue {
+                minValue = measurement.value
+            }
+        }
     }
 }
 
