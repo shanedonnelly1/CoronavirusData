@@ -8,6 +8,26 @@
 
 import SwiftUI
 
+struct Line: Shape {
+    var from: CGPoint
+    var to: CGPoint
+    
+    func path(in rect: CGRect) -> Path {
+        Path { p in
+            p.move(to: self.from)
+            p.addLine(to: self.to)
+        }
+    }
+}
+
+struct LineChart: View {
+    var points: [CGPoint]
+    
+    var body: some View {
+        Text("Draw the lines here")
+    }
+}
+
 struct LineChartView: View {
     let measurements: [DayInfo] = Bundle.main.decode("day-info.json")
     var maxValue = 0.0
@@ -15,17 +35,30 @@ struct LineChartView: View {
     
     var body: some View {
         GeometryReader { reader in
+//            Path { p in
+//                p.move(to: CGPoint(x: CGFloat(0), y: CGFloat(reader.size.height)))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 1/8), y: CGFloat(reader.size.height - (reader.size.height * 0/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 2/8), y: CGFloat(reader.size.height - (reader.size.height * 1/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 3/8), y: CGFloat(reader.size.height - (reader.size.height * 2/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 4/8), y: CGFloat(reader.size.height - (reader.size.height * 4/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 5/8), y: CGFloat(reader.size.height - (reader.size.height * 8/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 6/8), y: CGFloat(reader.size.height - (reader.size.height * 16/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 7/8), y: CGFloat(reader.size.height - (reader.size.height * 32/64))))
+//                p.addLine(to: CGPoint(x: CGFloat(reader.size.width * 8/8), y: CGFloat(reader.size.height - (reader.size.height * 64/64))))
+////                This will error
+////                ForEach(self.measurements, id: \.date) { measurement in
+////                    print("PL")
+////                }
+//            }.stroke()
+            
+            
+            
             ForEach(self.measurements, id: \.date) { measurement in
-                Path { p in
-                    let dayWidth = self.dayWidth(reader.size.width, count: self.measurements.count)
-                    let measurementHeight = self.measurementHeight(reader.size.height, range: Int(self.maxValue))
-                    let dayOffset = self.dayOffset(measurement.date, dWidth: dayWidth)
-//                    let lowOffset = tempOffset(measurement.value, degreeHeight: dHeight)
-                    let lowOffset = CGFloat(0)
-                    let highOffset = self.measurementHeightOffset(measurement.value, measurementHeight: measurementHeight)
-                    p.move(to: CGPoint(x: dayOffset, y: reader.size.height - lowOffset))
-                    p.addLine(to: CGPoint(x: dayOffset, y: reader.size.height - highOffset))
-                }.stroke()
+                Line(from: CGPoint(x: 0, y: CGFloat(reader.size.height)), to: CGPoint(x: CGFloat(reader.size.width * 1/8), y: CGFloat(reader.size.height - (reader.size.height * 0/64))))
+                    .stroke()
+                    
+                Line(from: CGPoint(x: CGFloat(reader.size.width * 1/8), y: CGFloat(reader.size.height - (reader.size.height * 0/64))), to: CGPoint(x: CGFloat(reader.size.width * 2/8), y: CGFloat(reader.size.height - (reader.size.height * 1/64))))
+                    .stroke()
             }
         }
     }
