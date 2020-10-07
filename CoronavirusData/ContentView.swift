@@ -52,8 +52,8 @@ struct ContentView: View {
     }
     
     init() {
-        countries = countryData.map { $1 }
-        // @Todo order by country.location Ascending
+        // Get a sorted array back from the dict for countryData
+        countries = countryData.map { $1 }.sorted { $0.location < $1.location }
     }
 }
 
