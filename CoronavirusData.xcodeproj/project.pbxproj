@@ -19,6 +19,7 @@
 		3461AD08252124F500AA8213 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461AD07252124F500AA8213 /* Bundle-Decodable.swift */; };
 		3461AD0C25212AFE00AA8213 /* CoronavirusCountryDataValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */; };
 		3461AD19252132B700AA8213 /* owid-covid-data.full.json in Resources */ = {isa = PBXBuildFile; fileRef = 3461AD17252132B700AA8213 /* owid-covid-data.full.json */; };
+		346B8184253A00A9004BB7EE /* DummyWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346B8183253A00A9004BB7EE /* DummyWidgetView.swift */; };
 		346C39A42523A3D800382C9C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 346C39A32523A3D800382C9C /* README.md */; };
 		34A94EBA252256D300601E29 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A94EB9252256D300601E29 /* LineChartView.swift */; };
 		34A94EC02522592800601E29 /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A94EBF2522592800601E29 /* BarChartView.swift */; };
@@ -39,6 +40,7 @@
 		3461AD07252124F500AA8213 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		3461AD0B25212AFE00AA8213 /* CoronavirusCountryDataValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronavirusCountryDataValue.swift; sourceTree = "<group>"; };
 		3461AD17252132B700AA8213 /* owid-covid-data.full.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "owid-covid-data.full.json"; sourceTree = "<group>"; };
+		346B8183253A00A9004BB7EE /* DummyWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DummyWidgetView.swift; path = Views/DummyWidgetView.swift; sourceTree = "<group>"; };
 		346C39A32523A3D800382C9C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		34A94EB9252256D300601E29 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		34A94EBF2522592800601E29 /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				34A94EBC252256DA00601E29 /* Views */,
 				346012D32521099800B18F2F /* CoronavirusDataApp.swift */,
 				346012D52521099800B18F2F /* ContentView.swift */,
+				346B8183253A00A9004BB7EE /* DummyWidgetView.swift */,
 				346012D72521099A00B18F2F /* Assets.xcassets */,
 				346012DC2521099A00B18F2F /* Info.plist */,
 				346012D92521099A00B18F2F /* Preview Content */,
@@ -202,6 +205,7 @@
 				34A94EC02522592800601E29 /* BarChartView.swift in Sources */,
 				346012D62521099800B18F2F /* ContentView.swift in Sources */,
 				3461AD0C25212AFE00AA8213 /* CoronavirusCountryDataValue.swift in Sources */,
+				346B8184253A00A9004BB7EE /* DummyWidgetView.swift in Sources */,
 				34533EE32522927100E72F23 /* DayInfo.swift in Sources */,
 				346012D42521099800B18F2F /* CoronavirusDataApp.swift in Sources */,
 				34A94EBA252256D300601E29 /* LineChartView.swift in Sources */,
