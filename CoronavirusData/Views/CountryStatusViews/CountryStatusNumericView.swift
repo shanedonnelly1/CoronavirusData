@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct DummyWidgetView: View {
+struct CountryStatusNumericView: View {
     let countryData: CoronavirusData = Bundle.main.decode("owid-covid-data.json")
     var country: CoronavirusCountryDataValue?
     
     var body: some View {
         VStack(alignment: .leading) {
             if country == nil {
-                NoDataDummyWidgetView()
+                CountryStatusNumericNoDataView()
             } else {
-                DataDummyWidgetView(country: country!)
+                CountryStatusNumericDataView(country: country!)
             }
         }
     }
@@ -28,7 +28,7 @@ struct DummyWidgetView: View {
 
 struct DummyWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        DummyWidgetView()
+        CountryStatusNumericView()
             .previewLayout(.fixed(width: 160, height: 160))
     }
 }

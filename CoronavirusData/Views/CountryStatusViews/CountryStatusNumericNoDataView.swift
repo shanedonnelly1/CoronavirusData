@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoDataDummyWidgetView: View {
+struct CountryStatusNumericNoDataView: View {
     var body: some View {
         Section {
             Text("No data")
@@ -18,7 +18,7 @@ struct NoDataDummyWidgetView: View {
 
 struct NoDataDummyWidgetView_Previews: PreviewProvider {
     static var previews: some View {
-        NoDataDummyWidgetView()
+        CountryStatusNumericNoDataView()
             .previewLayout(.fixed(width: 160, height: 160))
     }
 }

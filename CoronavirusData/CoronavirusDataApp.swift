@@ -13,7 +13,7 @@ struct CoronavirusDataApp: App {
         WindowGroup {
 //            ContentView()
 //            LineChartView()
-            DummyWidgetView()
+            CountryStatusNumericView()
         }
     }
 }

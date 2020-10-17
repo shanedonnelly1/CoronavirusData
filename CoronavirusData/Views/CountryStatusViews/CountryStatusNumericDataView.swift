@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DataDummyWidgetView: View {
+struct CountryStatusNumericDataView: View {
     let country: CoronavirusCountryDataValue
     var body: some View {
         Section {
@@ -32,8 +32,8 @@ struct DataDummyWidgetView: View {
     }
 }
 
-//struct DataDummyWidgetView_Previews: PreviewProvider {
+//struct CountryStatusNumericDataView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        DataDummyWidgetView(country: CoronavirusData())
+//        CountryStatusNumericDataView(country: CoronavirusData())
 //    }
 //}
