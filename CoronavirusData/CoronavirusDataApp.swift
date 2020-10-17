@@ -11,9 +11,9 @@ import SwiftUI
 struct CoronavirusDataApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
+            ContentView()
 //            LineChartView()
-            CountryStatusNumericView()
+//            CountryStatusNumericView()
         }
     }
 }

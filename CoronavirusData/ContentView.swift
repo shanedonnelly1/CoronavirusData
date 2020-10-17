@@ -15,34 +15,32 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(countries, id:\.location) { country in
-                    VStack(alignment: .leading) {
-                        Text("\(country.location)")
-                        HStack {
-                            Text("Total Deaths: ")
-                                .font(.caption)
-                            Spacer()
-                            Text(country.latestTotalDeathsString)
-                                .font(.caption)
-                        }
-                        HStack {
-                            Text("Total Cases: ")
-                                .font(.caption)
-                            Spacer()
-                            Text(country.latestTotalCasesString)
-                                .font(.caption)
-                            
-                        }
-                        if let data = country.latestData {
+                    NavigationLink(
+                        destination: CountryDetailView(country: country)
+                    ) {
+                        VStack(alignment: .leading) {
+                            Text("\(country.location)")
+                                .font(.body)
                             HStack {
-                                Text("Latest data from: ")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
+                                Text("Total Deaths: ")
                                 Spacer()
-                                Text("\(data.date)")
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
+                                Text(country.latestTotalDeathsString)
+                            }
+                            HStack {
+                                Text("Total Cases: ")
+                                Spacer()
+                                Text(country.latestTotalCasesString)
+                            }
+                            if let data = country.latestData {
+                                HStack {
+                                    Text("Latest data from: ")
+                                    Spacer()
+                                    Text("\(data.date)")
+                                }
+                                .foregroundColor(.secondary)
                             }
                         }
+                        .font(.caption)
                     }
                 }
             }
