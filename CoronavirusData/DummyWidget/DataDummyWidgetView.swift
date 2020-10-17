@@ -13,10 +13,21 @@ struct DataDummyWidgetView: View {
         Section {
             Text("\(country.location)")
                 .font(.headline)
-            Text("Total Deaths: \(country.latestTotalDeathsString)")
-                .font(.caption)
-            Text("Total Cases:  \(country.latestTotalCasesString)")
-                .font(.caption)
+            
+            HStack {
+                Text("Total Deaths:")
+                Spacer()
+                Text(country.latestTotalDeathsString)
+            }
+            .font(.caption)
+            
+            HStack {
+                Text("Total Cases:")
+                Spacer()
+                Text(country.latestTotalCasesString)
+
+            }
+            .font(.caption)
         }
     }
 }
