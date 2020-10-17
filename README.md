@@ -32,3 +32,4 @@ https://github.com/shanedonnelly1/CoronavirusData
 
 ## Licence:
 This project uses data from https://covid.ourworldindata.org whic is CC BY License.  Update this readme to detail what that means for this app.
+The app image is by the [CDC](https://unsplash.com/@cdc) on [Unsplash](https://unsplash.com)

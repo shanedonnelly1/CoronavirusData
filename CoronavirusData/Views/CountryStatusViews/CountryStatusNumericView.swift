@@ -19,6 +19,7 @@ struct CountryStatusNumericView: View {
                 CountryStatusNumericDataView(country: country!)
             }
         }
+        .padding(5)
     }
     
     init() {
