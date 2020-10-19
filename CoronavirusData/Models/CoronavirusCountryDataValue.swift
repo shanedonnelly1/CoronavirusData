@@ -23,15 +23,10 @@ struct CoronavirusCountryDataValue: Codable {
                 formatter.numberStyle = .decimal
                 if let formattedString = formatter.string(from: NSNumber(value: unwrappedTotalDeaths)) {
                     return formattedString
-                } else {
-                    return ""
                 }
-            } else {
-                return ""
             }
-        } else {
-            return ""
         }
+        return ""
     }
     
     var latestTotalCasesString: String {
@@ -41,15 +36,10 @@ struct CoronavirusCountryDataValue: Codable {
                 formatter.numberStyle = .decimal
                 if let formattedString = formatter.string(from: NSNumber(value: unwrappedTotalCases)) {
                     return formattedString
-                } else {
-                    return ""
                 }
-            } else {
-                return ""
             }
-        } else {
-            return ""
         }
+        return ""
     }
     
     enum CodingKeys: String, CodingKey {
